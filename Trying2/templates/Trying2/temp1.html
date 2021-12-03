@@ -1,0 +1,33 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href= "{% static 'Trying2/style.css' %}"/>
+<script src="https://kit.fontawesome.com/88278b5f83.js" crossorigin="anonymous"></script>
+{%if cour.pk is 1 %}
+<a  href=""> <img src="http://www.goodnaturegardening.com/"></a>
+
+<h1><a href="">{{cour.all_lesson}}</a></h1>
+<h2>{{cour.knowledgeable}}</h2>
+
+{% for x in lesson.set.all%}
+<li>{{x.tb}}</li>
+{%endfor%}
+
+{% elif cour.pk is 2 %}
+<h1><a href="">{{cour.all_lesson}}</a></h1>
+<h2>{{cour.knowledgeable}}</h2>
+{% else %}
+<h1>{{cour.all_lesson}}</h1>
+h2>{{cour.knowledgeable}}</h2>
+{% endif %}
+
+{% if error_message %} <p><strong>{{ error_message }}</P></strong>
+{%endif%}
+<form action="{% url 'Trying2:super' cour.id %}" method="post">
+    {% csrf_token %}
+    {% for choice in cour.details_set.all %}
+
+<input type="radio" name="choice" id="choice"{{forloop.counter}} value="{choice.id}}"
+< label for="for choice{{forloop.counter }}">{{choice.tb}}</label><br>
+{% endfor %}
+<input type="submit" value="submit">
+
+</form>

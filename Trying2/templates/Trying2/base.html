@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title class="t"> KIVURUGA CITY</title>
+<link rel="stylesheet" type="text/css" href= "{% static 'Trying2/style.css' %}"/>
+<script src="https://kit.fontawesome.com/88278b5f83.js" crossorigin="anonymous"></script>
+
+<section class="header">
+<nav>
+<a href="base.html"><img src="{% static 'images/mosk2.jpg' %}"></a>
+<div class="div1" id="Div1">
+<i class="fas fa-window-close" onclick="hideMenu()"></i>
+<ul>
+    <li><a href="">HOME</a></li>
+    <li><a href="#">CONTACT</a></li>
+    <li><a href="#">MARKET</a></li>
+    <li><a href="#">MOSQUE</a></li>
+    <li> <a href="#">CENTER</a></li>
+    <li><a href="#">SECTOR</a></li>
+</ul>
+</div>
+<i class="fas fa-bars" onclick="showMenu()"></i>
+</nav>
+<div class="t-box">
+<h1> KNOW KIVURUGA CITY</h1>
+<p>kivurug ni umujyi wo mucyaro utuwe n,abantu bake kandi ubuzima burahendutse<br>
+mbese kuhaba biroroshye cyane</p>
+<a href="" class="bt"> VISIT US TO KNWOW MORE</a>
+</div>
+</section>
+<!---good of  kivuruga-->
+
+<section class="good">
+<h1>the are many things on this center</h1>
+<p>good nuture,sell and buy is very easy,we have good price for who haven,t own house<br>
+good schools(nursary,primary,secondary...). we have center health..</p>
+<div class="row"> 
+<div class="col">
+<h3>Intermediate</h3>
+<p>
+mubyukuri isantere yacu iri ahantu heza cyane kuburyo<br>
+ibikorwo remezo byose umuntu akeneye biba bimuri hafi
+</P>
+</div>
+<div class="col">
+<h3>urugero1</h3>
+<p>
+umuriro w,amashanyarazi yo nibisanwe hose urahari aho wakubaka hose hegereye ipoto<br>
+amazi nayo nibisanzwe uretse mungo zabantu nka 98/100 kobafite amazi<br>
+nomuri centre hari ivomo rusange kandi ijerekani ni 10frw...
+</P>
+</div>
+<div class="col">
+<h3>murakenewe</h3>
+<p>
+tuzakomeza kubashakira ibigezweho muri iyi santere yacu<br>
+uruhare rwaburi wese rurakenewe ndetse nibitekerezo
+</P>
+</div>
+</div>
+</section>
+
+
+<!---apparence-->
+
+<section class="ttt">
+<h1>our good CITY<h1>
+<p>our city is goog apparence , very easy for travel</p>
+<div class="ttrow">
+<div class="ttcol">
+<img src="{% static 'images/iii.jpg' %}">
+<div class="la">
+<h3>center</h3>
+</div>
+</div>
+<div class="ttcol">
+<img src="{% static 'images/sss.jpg' %}">
+<div class="la">
+<h3>center</h3>
+</div>
+</div>
+<div class="ttcol">
+<img src="{% static 'images/iii.jpg' %}">
+<div class="la">
+<h3>center</h3>
+</div>
+</div>
+</div>
+</section>
+
+<!---contact us-->
+<section class="fo">
+<h1>AMASOMO WAKIGA HARIMO <br>SOFTWARE<br>PROGRAMMING AND DEVELLOPPEMENT<br>SOBANUKIRWA ISLAM</h1>
+<a href="https://www.youtube.com/channel/UCnkjSvWzfbBdAnQ1enDrU1A" class="tth1">FLOW US ON OUR YOUTUBE</a><br>
+<a href="https://web.facebook.com/islamsabiilallah.islaminzirayimana/" class="tth1">flow us on facebook</a>
+<ol class="lesso">
+    {%for x in ac%}
+    <li>
+    <a href="/{{x.id}}/">{{x.all_lesson}} </a>
+    </li>
+    {% endfor %}
+    </ol>
+    
+    
+</section>
+
+<!---footer-->
+<section class="footer">
+<h4>ABOUT US</h4>
+<p> congulatition oh my friends to learn at these subjects, request some energy<br>
+but don,t give up, beacause after hardship is a winning</p>
+<div class="icon">
+<i class="fab fa-facebook-square"></i>
+<i class="fab fa-twitter"></i>
+<i class="fab fa-instagram-square"></i>
+<i class="fab fa-linkedin"></i>
+</div>
+<p>make with<i class="fas fa-heart"></i>by easy tutorials</p>
+</section>
+
+
+<!---JavaScript for Toggle Menu-->
+<script>
+var Div1 = document.getElementById("Div1");
+function showMenu(){
+    Div1.style.right="0";
+}
+function hideMenu(){
+    Div1.style.right="-200px";
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
